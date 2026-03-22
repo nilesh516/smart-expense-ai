@@ -1,5 +1,10 @@
 package com.nilesh.smartexpense.model;
 
+/**
+ * Response model for scanned expense data returned by Claude.
+ * category field is kept here for display purposes —
+ * it will be mapped to a category_id in Phase 3.
+ */
 public class ExpenseResponse {
 
     private String vendor;

@@ -37,11 +37,14 @@ public class ExpenseService {
         expense.setVendor(response.getVendor());
         expense.setAmount(response.getAmount());
         expense.setDate(response.getDate());
-        expense.setCategory(response.getCategory());
         expense.setPaymentMethod(response.getPaymentMethod());
         expense.setTaxAmount(response.getTaxAmount());
         expense.setCurrency(response.getCurrency());
         expense.setNotes(response.getNotes());
+
+// scanType tracks how expense was created
+// categoryId will be linked in Phase 3 when categories are built
+        expense.setScanType(request.getImageBase64() != null ? "IMAGE" : "TEXT");
 
         expenseRepository.save(expense);
 
